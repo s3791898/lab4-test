@@ -10,7 +10,6 @@ on:
 
 jobs:
   lint:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +23,7 @@ jobs:
         run: npm run lint
 
   unit-tests:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
